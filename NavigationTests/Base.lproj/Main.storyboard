@@ -16,9 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SVa-gK-KRS">
-                                <rect key="frame" x="180" y="433" width="55" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SVa-gK-KRS">
+                                <rect key="frame" x="179.5" y="433" width="55" height="30"/>
                                 <state key="normal" title="Próxima"/>
                                 <connections>
                                     <segue destination="Q2X-2p-JfK" kind="show" identifier="secondScreenSegue" id="LhZ-ZP-obr"/>
@@ -27,31 +26,38 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="SVa-gK-KRS" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="4Wi-zD-RUk"/>
+                            <constraint firstItem="SVa-gK-KRS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="EGP-PZ-XhW"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="141" y="90"/>
         </scene>
-        <!--View Controller-->
+        <!--Second View Controller-->
         <scene sceneID="yv0-tA-Zl7">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="Q2X-2p-JfK" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="Q2X-2p-JfK" customClass="SecondViewController" customModule="NavigationTests" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ca6-wk-4bR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IAU-Fj-MOb">
-                                <rect key="frame" x="20" y="433" width="55" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Anterior"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vth-lL-Vf2">
-                                <rect key="frame" x="339" y="433" width="55" height="30"/>
+                                <rect key="frame" x="180" y="561" width="55" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Próxima"/>
                                 <connections>
                                     <segue destination="W4U-eG-vnM" kind="show" id="d6N-jq-sIN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IAU-Fj-MOb">
+                                <rect key="frame" x="180" y="236" width="55" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Anterior"/>
+                                <connections>
+                                    <action selector="returnFromScreenTwoToFirstScreen:" destination="Q2X-2p-JfK" eventType="touchUpInside" id="Yea-9w-gF5"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -64,10 +70,10 @@
             </objects>
             <point key="canvasLocation" x="871" y="90"/>
         </scene>
-        <!--View Controller-->
+        <!--Third View Controller-->
         <scene sceneID="2Am-j9-2yl">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="W4U-eG-vnM" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="W4U-eG-vnM" customClass="ThirdViewController" customModule="NavigationTests" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cr4-2u-Mz0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -78,6 +84,9 @@
                                 <state key="normal" title="Voltar a tela inicial">
                                     <color key="titleColor" red="0.96862745100000003" green="1" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="AcC-5K-hit" kind="unwind" unwindAction="unwingToFirstViewWithSeg:" id="eyP-pI-MHy"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="MdR-Us-J6K"/>
@@ -86,6 +95,7 @@
                     <navigationItem key="navigationItem" id="Neh-c2-xr5"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K7R-8x-MZQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="AcC-5K-hit" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1617" y="90"/>
         </scene>
